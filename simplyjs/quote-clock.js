@@ -4,7 +4,7 @@ function displayTime() {
             title: "         " + now.getHours() + ":"
               + now.getMinutes()
               + ":" + now.getSeconds()
-          });
+          }, false);
 }
 
 // Clear the screen
