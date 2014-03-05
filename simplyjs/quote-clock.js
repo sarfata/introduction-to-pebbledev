@@ -4,8 +4,11 @@ function displayTime() {
             title: "         " + now.getHours() + ":"
               + now.getMinutes()
               + ":" + now.getSeconds()
-          }, true);
+          });
 }
+
+// Clear the screen
+simply.text({}, true);
 
 // FullScreen mode
 simply.fullscreen(true);
