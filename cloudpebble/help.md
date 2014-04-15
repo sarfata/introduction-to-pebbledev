@@ -14,20 +14,16 @@
 
 Add a new handler:
 
-    void handle_inbox_received(DictionaryIterator *received, void *context) {
+    void handle_accel(AccelData *data, uint32_t num_samples) {
       static char buffer[40];
 
-      Tuple *message = dict_find(received, 42);
-
-      if (message != NULL) {
-        strncpy(buffer, message->value->cstring, sizeof(buffer));
-        text_layer_set_text(details_layer, buffer);
-      }
+      snprintf(buffer, sizeof(buffer), "X: %i Y: %i Z: %i", data->x, data->y, data->z);
+      text_layer_set_text(details_layer, buffer);
     }
 
 And in handle_init:
 
-      accel_data_service_subscribe(1, handle_accel);
+      accel_data_service_subscribe(3, handle_accel);
 
 # helloworld4 appmessage
 

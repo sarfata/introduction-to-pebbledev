@@ -34,6 +34,7 @@ void handle_init(void) {
   window_stack_push(window, true);
 
   accel_data_service_subscribe(1, handle_accel);
+
   // App Logging!
   APP_LOG(APP_LOG_LEVEL_DEBUG, "Just pushed a window!");
 }
